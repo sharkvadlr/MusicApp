@@ -79,7 +79,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
         val db = readableDatabase
         val query_sql = """
             SELECT * FROM $TABLE_USUARIOS
-            WHERE $COL_CORREO = correo AND $COL_PASSWORD = ?
+            WHERE $COL_CORREO = ? AND $COL_PASSWORD = ?
         """.trimIndent()
 
         // Crear un cursor que permite recorrer todos los registros
