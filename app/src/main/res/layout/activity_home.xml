@@ -13,38 +13,120 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#101818"
-        android:padding="25dp">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Prueba de API"
-                android:textColor="#ffffff"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
-
+            <!-- TEXTO PARA SABER EL ESTADO DE CARGA DEL API -->
             <TextView
                 android:id="@+id/tvResultado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:text="Cargando"
+                android:textSize="15sp"/>
+
+
+            <!-- TÍTULO DEL GÉNERO / INICIO DE SECCION -->
+            <TextView
+                android:layout_marginTop="30dp"
+                android:id="@+id/tvGeneroIndie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="Prueba Text"
-                android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:layout_marginHorizontal="15dp"
+                android:text="Indie"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
 
-            <ImageView
-                android:id="@+id/imgAlbum"
-                android:layout_width="200dp"
-                android:layout_height="200sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:scaleType="centerCrop"/>
+            <!-- SCROLLVIEW DEL GÉNERO -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:fillViewport="false"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:scrollbars="none">
+
+                <!-- CONTENEDOR DEL GENERO -->
+                <LinearLayout
+                    android:id="@+id/contenedorIndie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+
+            </HorizontalScrollView>
+
+            <!-- TÍTULO DEL GÉNERO / INICIO DE SECCION -->
+            <TextView
+                android:layout_marginTop="30dp"
+                android:id="@+id/tvGeneroRap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:text="Rap"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+            <!-- SCROLLVIEW DEL GÉNERO -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:fillViewport="false"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:scrollbars="none">
+
+                <!-- CONTENEDOR DEL GENERO -->
+                <LinearLayout
+                    android:id="@+id/contenedorRap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+
+            </HorizontalScrollView>
+
+            <!-- TÍTULO DEL GÉNERO / INICIO DE SECCION -->
+            <TextView
+                android:layout_marginTop="30dp"
+                android:id="@+id/tvGeneroLogic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:text="Logic"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"/>
+
+            <!-- SCROLLVIEW DEL GÉNERO -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:fillViewport="false"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:scrollbars="none">
+
+                <!-- CONTENEDOR DEL GENERO -->
+                <LinearLayout
+                    android:id="@+id/contenedorLogic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+
+            </HorizontalScrollView>
 
         </LinearLayout>
     </ScrollView>
