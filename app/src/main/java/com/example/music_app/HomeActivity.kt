@@ -1,5 +1,6 @@
 package com.example.music_app
 
+import android.content.Intent
 import android.media.Image
 import android.os.Bundle
 import android.view.View
@@ -109,6 +110,28 @@ class HomeActivity : AppCompatActivity() {
                 .load(album.obtenerImagenGrande())
                 .into(imgPortada)
 
+
+            // EVENTO
+            vistaAlbum.setOnClickListener {
+                //Necesitamos obtener el ID
+                val idAlbum = album.collectionId
+
+                //Validación para saber que se cuenta con ID
+                if(idAlbum != null){
+
+                    val intent = Intent(this@HomeActivity, DetailsActivity::class.java)
+
+                    //Enviar datos
+                    intent.putExtra("ID_ALBUM", idAlbum)
+                    intent.putExtra("NOMBRE_ALBUM", album.collectionName)
+                    intent.putExtra("ARTISTA_ALBUM", album.artistName)
+                    intent.putExtra("GENERO_ALBUM", album.primaryGenreName)
+                    intent.putExtra("CANCIONES_ALBUM", album.obtenerImagenGrande())
+                    intent.putExtra("IMAGEN_ALBUM", album.obtenerImagenGrande())
+
+                    startActivity(intent)
+                }
+            }
             // Asignar la vista del contenedor a las tarjetas de albums4
             contenedor.addView(vistaAlbum)
         }
