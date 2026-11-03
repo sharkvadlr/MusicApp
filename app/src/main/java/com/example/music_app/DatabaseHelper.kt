@@ -17,7 +17,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
     companion object{
         // Información de la BD
         private const val DATABASE_NAME = "musica.db"
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 3
 
         // Información de las tablas en la BD
         private const val TABLE_USUARIOS = "usuarios"
@@ -25,6 +25,18 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(
         private const val COL_NOMBRE = "nombre"
         private const val COL_CORREO = "correo"
         private const val COL_PASSWORD = "password"
+
+        // Información de la tabla de favoritos
+        private const val TABLE_FAVORITOS = "favoritos"
+        private const val COL_ID_FAVORITO = "id"
+        private const val COL_ALBUM_ID = "album_id"
+        private const val COL_NOMBRE_ALBUM = "nombre_album"
+        private const val COL_ARTISTA_ALBUM = "artista"
+        private const val COL_GENERO = "genero"
+        private const val COL_CANCIONES = "num_canciones"
+        private const val COL_FECHA = "fecha"
+        private const val COL_IMAGEN = "imagen"
+
     }
 
     // MÉTODO ONCREATE - Para crear la BD
