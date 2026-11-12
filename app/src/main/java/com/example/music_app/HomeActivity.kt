@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.example.music_app.model.Album
 import com.example.music_app.model.ITunesResponse
 import com.example.music_app.network.RetrofitClient
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,16 +27,20 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var contenedorIndie : LinearLayout
     private lateinit var contenedorRap : LinearLayout
     private lateinit var contenedorLogic : LinearLayout
+    private lateinit var bottomNavigation : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
 
+        bottomNavigation = findViewById(R.id.bottomNavigation)
         tvResultado = findViewById(R.id.tvResultado)
         contenedorIndie = findViewById(R.id.contenedorIndie)
         contenedorRap = findViewById(R.id.contenedorRap)
         contenedorLogic = findViewById(R.id.contenedorLogic)
+
+        menuNavegacion()
 
         // TODO: Agregar método de llamado de álbum
         obtenerAlbum("indie", contenedorIndie)
@@ -138,5 +143,30 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    //METODO PARA EL FUNCIONAMIENTO DEL MENU
+    private fun menuNavegacion(){
+
+        //Verificar la opcion seleccionada del menu
+        bottomNavigation.selectedItemId = R.id.nav_inicio
+
+        bottomNavigation.setOnItemSelectedListener { item ->
+
+            when(item.itemId){
+
+                R.id.nav_inicio -> {
+                    true
+                }
+
+                R.id.nav_favoritos -> {
+                    val intent = Intent(this, FavoritesActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+
+        }
+    }
 
 }
