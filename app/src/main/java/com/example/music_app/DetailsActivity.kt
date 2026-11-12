@@ -39,7 +39,7 @@ class DetailsActivity : AppCompatActivity() {
     // MÉTODO PARA MOSTRAR LA INFORMACION DE UN ALBUM
     private fun mostrarInformacionAlbum(){
 
-        val idAlbum = intent.getLongExtra("ID_ALBUM", 1)
+        val idAlbum = intent.getLongExtra("ID_ALBUM", -1L)
         val nombreAlbum = intent.getStringExtra("NOMBRE_ALBUM") ?: "Album sin nombre"
         val artistaAlbum= intent.getStringExtra("ARTISTA_ALBUM") ?: "Artista desconocido"
         val genero = intent.getStringExtra("GENERO_ALBUM") ?: "Genero desconocido"
@@ -57,6 +57,11 @@ class DetailsActivity : AppCompatActivity() {
         // Verificar que el album exista como favorito
         if(idAlbum != -1L){
             albumFavorito = db.existeAlbumFavorito(idAlbum)
+            if(albumFavorito){
+                btnFavorito.setImageResource(R.drawable.baseline_favorite_24)
+            } else {
+                btnFavorito.setImageResource(R.drawable.no_favorite)
+            }
         }
 
         btnFavorito.setOnClickListener {
@@ -67,8 +72,8 @@ class DetailsActivity : AppCompatActivity() {
                 //btnFavorito.setImageResource(R.drawable.baseline_favorite_24)
                 //Toast.makeText(this, "Album $nombreAlbum agregado a favoritos", Toast.LENGTH_SHORT).show()
                 val eliminado = db.eliminarAlbumFavorito(idAlbum)
-                btnFavorito.setImageResource(R.drawable.no_favorite)
                 if(eliminado){
+                    btnFavorito.setImageResource(R.drawable.no_favorite)
                     albumFavorito = !albumFavorito
                     Toast.makeText(this, "Album $nombreAlbum eliminado de favoritos", Toast.LENGTH_SHORT).show()
                 }
@@ -92,9 +97,9 @@ class DetailsActivity : AppCompatActivity() {
                     fecha = fecha,
                     imagen = imagen
                 )
-                btnFavorito.setImageResource(R.drawable.baseline_favorite_24)
                 // Evaluar si la inseción fue correcta
                 if(guardado){
+                    btnFavorito.setImageResource(R.drawable.baseline_favorite_24)
                     albumFavorito = !albumFavorito
                     Toast.makeText(this, "Album $nombreAlbum agregado a favoritos", Toast.LENGTH_SHORT).show()
                 }else{

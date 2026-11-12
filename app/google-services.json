@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "58185110576",
+    "project_id": "prueba-musicapp",
+    "storage_bucket": "prueba-musicapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:58185110576:android:7af3c760b7bb1a7a9589f5",
+        "android_client_info": {
+          "package_name": "com.example.music_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "58185110576-ama0v104u5n2acu52clternns7t777js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.music_app",
+            "certificate_hash": "e22f8bf5a19ee7b9ccca9ed688c726730f29f770"
+          }
+        },
+        {
+          "client_id": "58185110576-ai6mcl3h72ghr6cq3elsdltcosi05i5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn62hPYCPwsEnRoQXGduAARXa7Wn6so8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "58185110576-ai6mcl3h72ghr6cq3elsdltcosi05i5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
