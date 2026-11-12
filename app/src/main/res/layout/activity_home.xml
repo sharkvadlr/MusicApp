@@ -10,15 +10,19 @@
     tools:context=".HomeActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#101818"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:scrollbars="none">
 
             <!-- TEXTO PARA SABER EL ESTADO DE CARGA DEL API -->
             <TextView
@@ -27,22 +31,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/white"
                 android:text="Cargando"
-                android:textSize="15sp"/>
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
 
             <!-- TÍTULO DEL GÉNERO / INICIO DE SECCION -->
+
             <TextView
-                android:layout_marginTop="30dp"
                 android:id="@+id/tvGeneroIndie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="30dp"
                 android:text="Indie"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <!-- SCROLLVIEW DEL GÉNERO -->
             <HorizontalScrollView
@@ -60,7 +65,7 @@
                     android:id="@+id/contenedorIndie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"/>
+                    android:orientation="horizontal" />
 
             </HorizontalScrollView>
 
@@ -98,15 +103,15 @@
 
             <!-- TÍTULO DEL GÉNERO / INICIO DE SECCION -->
             <TextView
-                android:layout_marginTop="30dp"
-                android:id="@+id/tvGeneroLogic"
+                android:id="@+id/tvGeneroArtista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="30dp"
                 android:text="Logic"
                 android:textColor="@color/white"
                 android:textSize="25sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <!-- SCROLLVIEW DEL GÉNERO -->
             <HorizontalScrollView
@@ -121,10 +126,10 @@
 
                 <!-- CONTENEDOR DEL GENERO -->
                 <LinearLayout
-                    android:id="@+id/contenedorLogic"
+                    android:id="@+id/contenedorArtista"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"/>
+                    android:orientation="horizontal" />
 
             </HorizontalScrollView>
 

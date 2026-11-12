@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var tvResultado : TextView
     private lateinit var contenedorIndie : LinearLayout
     private lateinit var contenedorRap : LinearLayout
-    private lateinit var contenedorLogic : LinearLayout
+    private lateinit var contenedorArtista : LinearLayout
     private lateinit var bottomNavigation : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,14 +38,14 @@ class HomeActivity : AppCompatActivity() {
         tvResultado = findViewById(R.id.tvResultado)
         contenedorIndie = findViewById(R.id.contenedorIndie)
         contenedorRap = findViewById(R.id.contenedorRap)
-        contenedorLogic = findViewById(R.id.contenedorLogic)
+        contenedorArtista = findViewById(R.id.contenedorArtista)
 
         menuNavegacion()
 
         // TODO: Agregar método de llamado de álbum
         obtenerAlbum("indie", contenedorIndie)
         obtenerAlbum("rap", contenedorRap)
-        obtenerAlbum("logic", contenedorLogic)
+        obtenerAlbum("logic", contenedorArtista)
 
 
     }
